@@ -27,14 +27,24 @@ self.screen_size = self.screen.get_size() #define tamanho da tela do jogo
 
 pygame.mouse.set_visible(0) #desabilita mouse
 pygame.display.set_caption('Fuga Espacial')
-    #handle_events()
+
+
+
+def handle_events(self):
+    """
+    Trata o evento e toma a ação necessária.
+    """
+    for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+                self.run = False #trata a saída do jogo
+#handle_events()
 
 def elements_update(self, dt):
-        self.background.update(dt)
-    #elements_update()
+        self.background.update(dt) #Atualiza elementos
+#elements_update()
 
     def elements_draw(self):
-        self.background.draw(self,screen)
+        self.background.draw(self,screen) #define elementos
     #elements_draw()
 
     def loop(self):...
