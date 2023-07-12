@@ -6,6 +6,37 @@ Descrição: Um grupo de diplomatas escapam de uma fortaleza estrelar a bordo de
 
 import pygame
 
-# Inicia o jogo: Cria o objeto game e chama o loop básico
-game = Game("resolution", "fullscreen")
-game.loop()
+class Game:
+    screen = None
+    screen_size = None
+    width = 800
+    height = 600
+    run = True
+    background = None
+
+    def __init__(self, size, fullscreen):...
+
+"""
+Função que inicializa o pygame, define a resolução da tela,
+caption e desabilita o mouse.
+"""
+pygame.init() #inicia o pygame
+
+self.screen = pygame.display.set_mode((self.width, self.height)) #tamanho da tela
+self.screen_size = self.screen.get_size() #define tamanho da tela do jogo
+
+pygame.mouse.set_visible(0) #desabilita mouse
+pygame.display.set_caption('Fuga Espacial')
+    #handle_events()
+
+def elements_update(self, dt):
+        self.background.update(dt)
+    #elements_update()
+
+    def elements_draw(self):
+        self.background.draw(self,screen)
+    #elements_draw()
+
+    def loop(self):...
+    #loop()
+#Game
