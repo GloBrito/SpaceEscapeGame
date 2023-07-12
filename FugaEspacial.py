@@ -5,7 +5,7 @@ Descrição: Um grupo de diplomatas escapam de uma fortaleza estrelar a bordo de
 """
 
 import pygame
-
+pygame.init()
 class Background:
       """
       Esta classe define o Plano de fundo do jogo
@@ -25,7 +25,7 @@ class Background:
 
       def draw(self, screen):
             screen.blit(self.image,(0,0))
-#
+# draw()
 class Game:
     screen = None
     screen_size = None
@@ -63,11 +63,11 @@ def elements_update(self, dt):
         self.background.update(dt) #Atualiza elementos
 #elements_update()
 
-    def elements_draw(self):
+def elements_draw(self):
         self.background.draw(self,screen) #define elementos
     #elements_draw()
 
-    def loop(self):
+def loop(self):
       """
       Laço principal
       """
