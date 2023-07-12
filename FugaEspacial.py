@@ -6,6 +6,26 @@ Descrição: Um grupo de diplomatas escapam de uma fortaleza estrelar a bordo de
 
 import pygame
 
+class Background:
+      """
+      Esta classe define o Plano de fundo do jogo
+      """
+      image = None
+
+      def __init__(self):
+            
+            background_fig = pygame.image.load("images/background.png")
+            background_fig.convert()
+            self.image = background_fig #atribui imagem para o background
+    #__init__()
+
+      def update(self, dt):
+            pass #Ainda não realiza nada
+      #update()
+
+      def draw(self, screen):
+            screen.blit(self.image,(0,0))
+#
 class Game:
     screen = None
     screen_size = None
@@ -48,9 +68,33 @@ def elements_update(self, dt):
     #elements_draw()
 
     def loop(self):
-      """Laço principal"""
-    #loop()
-#Criar
+      """
+      Laço principal
+      """
 
 #criar o plano de fundo
-self.backgroud = Background()
+self.background = Background()
+
+#Inicializa o relogio e o dt que vai limitar o valor FPS (frames por segundo) do jogo
+clock = pygame.time.Clock()
+dt = 16   #dt determina a taxa máxima de frames por segundos dt = delta time
+
+#Início do loop principal fo programa
+while self.run:
+      clock.tick(1000 / dt)
+
+      # Handle input Events
+      self.handle_events() #trata eventos das ações dos jogadores (inputs)
+
+      #Atualiza Elementos
+      self.elements_update(dt) #atualiza elementos
+
+      #Desenha o background buffer
+      self.elements_draw()
+
+      #Atualiza a tela
+      pygame.display.update()
+      clock.tick(2000)
+#while self.run
+#loop()
+#Game
