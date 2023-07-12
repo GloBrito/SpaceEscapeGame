@@ -47,6 +47,10 @@ def elements_update(self, dt):
         self.background.draw(self,screen) #define elementos
     #elements_draw()
 
-    def loop(self):...
+    def loop(self):
+      """Laço principal"""
     #loop()
-#Game
+#Criar
+
+#criar o plano de fundo
+self.backgroud = Background()
