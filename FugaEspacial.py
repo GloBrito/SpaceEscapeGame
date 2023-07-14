@@ -222,7 +222,7 @@ class Game:
             movL_y = movL_y + velocidade_background
             movR_y = movR_y + velocidade_background
 
-            # se a imagem ultrapassar a extremidade da tela, mova de volta
+            # se a imagem ultrapassar a extremidade da tela, mova de volta. Garante que a imagem de fundo esteja sempre em movimento
             if movL_y > 600 and movR_y > 600:
                 movL_y -= 600
                 movR_y -= 600
