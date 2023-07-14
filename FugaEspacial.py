@@ -32,9 +32,9 @@ class Background:
         pass  #ainda não faz nada
 
     def draw(self, screen):
-        screen.blit(self.image, (0, 0))  # @ copiar de uma imagem para outra. / Copia a imagem que eu quero para a posição desejada
-        screen.blit(self.margin_left, (0, 0))  # @ 60 depois da primeira margem
-        screen.blit(self.margin_right, (740, 0))  # @ 60 depois da primeira margem
+        screen.blit(self.image, (0, 0))  #copiar de uma imagem para outra. / Copia a imagem que eu quero para a posição desejada
+        screen.blit(self.margin_left, (0, 0))  #60 depois da primeira margem
+        screen.blit(self.margin_right, (740, 0))  #60 depois da primeira margem
 
     def move(self, screen, scr_height, movL_x, movL_y, movR_x, movR_y):
         for i in range(0, 2):
@@ -55,7 +55,7 @@ class Player:  #classe que define o jogador
         self.x = x
         self.y = y
 
-    def draw(self, screen, x, y):  # metodo que desenhar o player
+    def draw(self, screen, x, y): #metodo que desenha o player
         screen.blit(self.image, (x, y))
 
 #gera/gerir os obstculos/ameaças ao jogador
@@ -109,7 +109,7 @@ class Game:
 
         my_font = pygame.font.Font("Fonts/Fonte4.ttf", 100)  #define a fonte
 
-        self.render_text_bateulateral = my_font.render("VACILOU!!", 0, (255, 255, 255))
+        self.render_text_bateulateral = my_font.render("VACILOU!!", 0, (255, 255, 255)) #@texto não está centralizado
         self.render_text_perdeu = my_font.render("VIROU POEIRA!)", 0, (255, 0, 0))  #texto opaco/translucido informando fim dojogo
     #init()
 
@@ -173,9 +173,12 @@ class Game:
     def loop(self):
         """Função do Laço principal"""
         velocidade_background = 10  #variavel para movimento do plano de fundo
-        movL_x = 0  #movimento da margem esquerda
+        #movimento da margem esquerda
+        movL_x = 0
         movL_y = 0
-        movR_x = 740  #movimento da margem direita
+        
+        #movimento da margem direita
+        movR_x = 740
         movR_y = 0
 
         #*Movimentação das ameaças do jogo*
